@@ -32,7 +32,7 @@ async def follow(self: BaseBot, user: User, message: str) -> None:
     for task in task_list:
         if task.get_coro().__name__ == "following_loop":
             task.set_name("following_loop")
-    await self.highrise.chat(f"ok  {user.username} 🚶‍♂️")
+    await self.highrise.chat(f"coming😍  {user.username} 🚶‍♂️")
     
 async def stop(self: BaseBot, user: User, message: str) -> None:
     taskgroup = self.highrise.tg
@@ -40,7 +40,7 @@ async def stop(self: BaseBot, user: User, message: str) -> None:
     for task in task_list:
         if task.get_name() == "following_loop":
             task.cancel()
-            await self.highrise.chat(f"yes  {user.username}")
+            await self.highrise.chat(f"ok🥲  {user.username}")
             return
     await self.highrise.chat("ok ")
     return
