@@ -29,7 +29,7 @@ class Bot(BaseBot):
 
         await self.highrise.send_whisper(user.id,f"❤️Use: [/help] For More Informations.")
 
-        await self.highrise.send_whisper(user.id,f"❤️[❤️] or [🤍].")
+        await self.highrise.send_whisper(user.id,f"❤️[Rent Bot] or [Buy Bot File] Call [@ShoKytoo] in private.")
            
         await self.highrise.send_emote("dance-hipshake")
       
@@ -192,7 +192,7 @@ class Bot(BaseBot):
         if message.startswith("/curative"):
            await self.highrise.react("heart",user.id)
 
-        if message.startswith("/hm"):
+        if message.startswith("/shield"):
            await self.highrise.react("heart",user.id)
            await self.highrise.send_whisper(user.id,f"@{user.username} 🛡 You Used The Shield 🛡")
             
@@ -672,7 +672,7 @@ class Bot(BaseBot):
         if        message.startswith("/fairytwirl") or      message.startswith("!fairytwirl") or        message.startswith("fairytwirl") or    message.startswith("Fairytwirl") or message.startswith("97"):
             await self.highrise.send_emote("emote-looping",user.id)
 
-        if              message.startswith("Ft All") or                              message.startswith("/emote all fairyfloat") or       message.startswith("!emote all fairyfloat"):
+        if              message.startswith("Fairyfloat All") or                              message.startswith("/emote all fairyfloat") or       message.startswith("!emote all fairyfloat"):
           if user.username == "FallonXOXO" or user.username == "RayMG":
             roomUsers = (await self.highrise.get_room_users()).content
             for roomUser, _ in roomUsers:
@@ -1166,7 +1166,7 @@ class Bot(BaseBot):
           parts = message.split()
           #check if message is valid "kick @username"
           if len(parts) != 2:
-              await self.highrise.chat("ok.")
+              await self.highrise.chat("formato de banimento errado.")
               return
           #checks if there's a @ in the message
           if "@" not in parts[1]:
