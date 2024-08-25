@@ -1318,5 +1318,5 @@ class Bot(BaseBot):
 
     async def on_user_leave(self, user: User) -> None:
         print(f"{user.username} leave the room ")
-        await self.highrise.chat(f"❤️Goodbye [{user.username}]! ")
+        await self.highrise.chat(f"❤see ya [{user.username}]! ")
         await self.highrise.send_emote("dance-hipshake")
