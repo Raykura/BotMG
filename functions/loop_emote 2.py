@@ -34,7 +34,7 @@ async def loop(self: BaseBot, user: User, message: str) -> None:
             try:
                 await self.highrise.send_emote(emote_id, user.id)
             except:
-                await self.highrise.send_whisper(user.id,f"✅️{user.username} Siga <@Ashokk> Para Novas Novidades e Mande Ideias Na Nossa Hastag : #Ashokk ✅️")
+                await self.highrise.send_whisper(user.id,f"✅️{user.username} Siga <@RayMG> 🤍 Hastag : #RayMG ✅️")
                 return
             await asyncio.sleep(10)
             room_users = (await self.highrise.get_room_users()).content
@@ -52,7 +52,7 @@ async def loop(self: BaseBot, user: User, message: str) -> None:
         emote_name = " ".join(splited_message[1:])
         print(emote_name)
     except:
-        await self.highrise.send_whisper(user.id,f"✅️ @{user.username} Siga <@Ashokk> Para Novas Novidades e Mande Ideias Na Nossa Hastag : #Ashokk ✅️")
+        await self.highrise.send_whisper(user.id,f"✅️ @{user.username} Siga <@RayMG> 🤍 Hastag : #RayMG ✅️")
         return
     else:   
         taskgroup = self.highrise.tg
@@ -71,7 +71,7 @@ async def stop_loop(self: BaseBot, user: User, message: str) -> None:
         for task in task_list:
             if task.get_name() == user.username:
                 task.cancel()
-                await self.highrise.send_whisper(user.id,f"✅️ @{user.username} Siga <@Ashokk> Para Novas Novidades e Mande Ideias Na Nossa Hastag : #Ashokk ✅️")
+                await self.highrise.send_whisper(user.id,f"✅️ @{user.username} Siga <@RayMG> 🤍 Hastag : #RayMG ✅️")
                 return
-        await self.highrise.send_whisper(user.id,f"✅️ @{user.username} Siga <@Ashokk> Para Novas Novidades e Mande Ideias Na Nossa Hastag : #Ashokk ✅️")
+        await self.highrise.send_whisper(user.id,f"✅️ @{user.username} Siga <@RayMG> 🤍 Hastag : #RayMG ✅️")
         return
