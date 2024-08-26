@@ -155,7 +155,7 @@ class Bot(BaseBot):
                     await self.highrise.chat("Invalid tip amount. Please specify a valid number.")
                     
         if message.startswith("/fish"):
-            await self.highrise.send_whisper(user.id,"Você Está Pescando 🎣...")
+            await self.highrise.send_whisper(user.id,"fish 🎣...")
           
         if message.lower() == "/fish":
            frase = random.choice(pescar)
@@ -1160,13 +1160,13 @@ class Bot(BaseBot):
           if user.username == "FallonXOXO" or user.username == "RayMG":
               pass
           else:
-              await self.highrise.chat("Voce não tem permissao para usar esse comando.")
+              await self.highrise.chat("🤍.")
               return
           #separete message into parts
           parts = message.split()
           #check if message is valid "kick @username"
           if len(parts) != 2:
-              await self.highrise.chat("formato de banimento errado.")
+              await self.highrise.chat("🤍.")
               return
           #checks if there's a @ in the message
           if "@" not in parts[1]:
