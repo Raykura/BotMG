@@ -14,7 +14,7 @@ class WebServer():
       return "Funcionando"
 
   def run(self) -> None:
-    self.app.run(host='0.0.0.0', port=8017)
+    self.app.run(host='0.0.0.0', port=8089)
 
   def keep_alive(self):
     t = Thread(target=self.run)
