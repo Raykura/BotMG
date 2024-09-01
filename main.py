@@ -1300,7 +1300,7 @@ class Bot(BaseBot):
             await self.command_handler(user, message)
 
         if                            message.startswith("Summon") or         message.startswith("Summom") or         message.startswith("!summom") or        message.startswith("/summom") or        message.startswith("/summon") or  message.startswith("!summon"):
-          if user.username == "FallonXOXO" or user.username == "RayMG":
+          if user.username == "FallonXOXO" or user.username == "RayMG" or user.username == "mghaa":
            target_username = message.split("@")[-1].strip()
            await self.teleport_user_next_to(target_username, user)
             
