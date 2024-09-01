@@ -36,9 +36,65 @@ class Bot(BaseBot):
         await self.highrise.send_emote("emote-lust",user.id) 
       
     async def on_chat(self, user: User, message: str) -> None:
-        print(f"{user.username}: {message}")  
 
-        if message.lower().startswith("-tipall ") and user.username == "RayMG":
+            print(f"{user.username} said: {message}")
+            if message.startswith("!wallet") and user.username == "RayMg":
+                  wallet = (await self.highrise.get_wallet()).content
+                  await self.highrise.chat(f"The bot wallet contains {wallet[0].amount} {wallet[0].type}")
+            if message.lower().startswith("!tipme ") and user.username=="RayMG":
+                try:
+                    amount_str = message.split(" ")[1]
+                    amount = int(amount_str)
+                    bars_dictionary = {
+                        10000: "gold_bar_10k",
+                        5000: "gold_bar_5000",
+                        1000: "gold_bar_1k",
+                        500: "gold_bar_500",
+                        100: "gold_bar_100",
+                        50: "gold_bar_50",
+                        10: "gold_bar_10",
+                        5: "gold_bar_5",
+                        1: "gold_bar_1"
+                    }
+                    fees_dictionary = {
+                        10000: 1000,
+                        5000: 500,
+                        1000: 100,
+                        500: 50,
+                        100: 10,
+                        50: 5,
+                        10: 1,
+                        5: 1,
+                        1: 1
+                    }
+                    # Get bot's wallet balance
+                    bot_wallet = await self.highrise.get_wallet()
+                    bot_amount = bot_wallet.content[0].amount
+                    # Check if bot has enough funds
+                    if bot_amount < amount:
+                        await self.highrise.chat("Not enough funds in the bot's wallet.")
+                        return
+                    # Convert amount to bars and calculate total
+                    tip = []
+                    total = 0
+                    for bar in sorted(bars_dictionary.keys(), reverse=True):
+                        if amount >= bar:
+                            bar_amount = amount // bar
+                            amount %= bar
+                            tip.extend([bars_dictionary[bar]] * bar_amount)
+                            total += bar_amount * bar + fees_dictionary[bar]
+                    if total > bot_amount:
+                        await self.highrise.chat("Not enough funds to tip the specified amount.")
+                        return
+                    # Send tip to the user who issued the command
+                    for bar in tip:
+                        await self.highrise.tip_user(user.id, bar)
+                    await self.highrise.chat(f"You have been tipped {amount_str}.")
+                except (IndexError, ValueError):
+                    await self.highrise.chat("Invalid tip amount. Please specify a valid number.")
+
+
+            if message.lower().startswith("!tipall ") and user.username == "RayMG":
               parts = message.split(" ")
               if len(parts) != 2:
                   await self.highrise.send_message(user.id, "Invalid command")
@@ -101,58 +157,6 @@ class Bot(BaseBot):
                       return
                   for bar in tip:
                       await self.highrise.tip_user(room_user.id, bar)
-
-        if message.lower().startswith("-tipme ") and user.username== "RayMG":
-                try:
-                    amount_str = message.split(" ")[1]
-                    amount = int(amount_str)
-                    bars_dictionary = {
-                        10000: "gold_bar_10k",
-                        5000: "gold_bar_5000",
-                        1000: "gold_bar_1k",
-                        500: "gold_bar_500",
-                        100: "gold_bar_100",
-                        50: "gold_bar_50",
-                        10: "gold_bar_10",
-                        5: "gold_bar_5",
-                        1: "gold_bar_1"
-                    }
-                    fees_dictionary = {
-                        10000: 1000,
-                        5000: 500,
-                        1000: 100,
-                        500: 50,
-                        100: 10,
-                        50: 5,
-                        10: 1,
-                        5: 1,
-                        1: 1
-                    }
-                    # Get bot's wallet balance
-                    bot_wallet = await self.highrise.get_wallet()
-                    bot_amount = bot_wallet.content[0].amount
-                    # Check if bot has enough funds
-                    if bot_amount < amount:
-                        await self.highrise.chat("Not enough funds in the bot's wallet.")
-                        return
-                    # Convert amount to bars and calculate total
-                    tip = []
-                    total = 0
-                    for bar in sorted(bars_dictionary.keys(), reverse=True):
-                        if amount >= bar:
-                            bar_amount = amount // bar
-                            amount %= bar
-                            tip.extend([bars_dictionary[bar]] * bar_amount)
-                            total += bar_amount * bar + fees_dictionary[bar]
-                    if total > bot_amount:
-                        await self.highrise.chat("Not enough funds to tip the specified amount.")
-                        return
-                    # Send tip to the user who issued the command
-                    for bar in tip:
-                        await self.highrise.tip_user(user.id, bar)
-                    await self.highrise.chat(f"You have been tipped {amount_str}.")
-                except (IndexError, ValueError):
-                    await self.highrise.chat("Invalid tip amount. Please specify a valid number.")
                     
         if message.startswith("/fish"):
             await self.highrise.send_whisper(user.id,"fish 🎣...")
