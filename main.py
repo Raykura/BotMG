@@ -1293,7 +1293,7 @@ class Bot(BaseBot):
         print(f"{user.username} whispered: {message}")
 
         if        message.startswith("/tele") or              message.startswith("/tp") or              message.startswith("/fly") or     message.startswith("!tele") or      message.startswith("!tp") or     message.startswith("!fly"):
-          if user.username == "FallonXOXO" or user.username == "RayMG":
+          if user.username == "FallonXOXO" or user.username == "RayMG" or user.username == "mghaa":
             await self.teleporter(message)
 
         if        message.startswith("/") or              message.startswith("-") or              message.startswith(".") or          message.startswith("!"):
