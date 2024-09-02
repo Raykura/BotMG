@@ -465,7 +465,6 @@ class Bot(BaseBot):
 
         if        message.startswith("/shop") or      message.startswith("!shop") or      message.startswith("Shop") or   message.startswith("shop") or   message.startswith("!shopping") or message.startswith("/shopping") or message.startswith("Shopping") or message.startswith("shopping") or message.startswith("43"):
             await self.highrise.send_emote("dance-shoppingcart",user.id)
-            await self.highrise.chat(f" Você vai gostar desse emote {user.username} 😍")
 
         if        message.startswith("/russian") or      message.startswith("!russian") or      message.startswith("Russian") or                              message.startswith("russian") or message.startswith("44"):
             await self.highrise.send_emote("dance-russian",user.id)
