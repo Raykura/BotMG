@@ -305,31 +305,25 @@ class Bot(BaseBot):
                    
         if        message.startswith("!wrong") or   message.startswith("wrong") or      message.startswith("/wrong") or      message.startswith("Wrong") or message.startswith("1"):
             await self.highrise.send_emote("dance-wrong",user.id)
-            await self.highrise.chat(f" You will like this emote {user.username} 😍")
 
         if        message.startswith("/fashion") or      message.startswith("fashion") or       message.startswith("!fashion") or      message.startswith("Fashion") or message.startswith("2"):
             await self.highrise.send_emote("emote-fashionista",user.id)
-            await self.highrise.chat(f" You will like this emote {user.username} 😍")
 
         if        message.startswith("/gravity") or      message.startswith("gravity") or       message.startswith("!gravity") or      message.startswith("Gravity") or message.startswith("3"):
             await self.highrise.send_emote("emote-gravity",user.id)
-            await self.highrise.chat(f" You will like this emote {user.username} 😍")
 
         if        message.startswith("/icecream") or                                message.startswith("icecream") or message.startswith("!icecream") or      message.startswith("Icecream") or message.startswith("4"):
             await self.highrise.send_emote("dance-icecream",user.id)
-            await self.highrise.chat(f" You will like this emote {user.username} 😍")
 
         if        message.startswith("/casual") or  message.startswith("casual") or     message.startswith("!casual") or      message.startswith("Casual") or message.startswith("5"):
             await self.highrise.send_emote("idle-dance-casual",user.id)
-            await self.highrise.chat(f" You will like this emote {user.username} 😍")
 
         if        message.startswith("/kiss") or      message.startswith("!kiss") or  message.startswith("kiss") or      message.startswith("Kiss") or message.startswith("6"):
             await self.highrise.send_emote("emote-kiss",user.id)
-            await self.highrise.chat(f" You will like this emote {user.username} 😍")
 
         if        message.startswith("/no") or      message.startswith("no") or            message.startswith("!no") or      message.startswith("No") or message.startswith("7"):
             await self.highrise.send_emote("emote-no",user.id)
-            await self.highrise.chat(f" You will like this emote {user.username} 😍")
+       
         if        message.startswith("/sad") or      message.startswith("!sad") or    message.startswith("sad") or     message.startswith("Sad") or message.startswith("8"):
             await self.highrise.send_emote("emote-sad",user.id)
             
