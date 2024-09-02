@@ -468,175 +468,132 @@ class Bot(BaseBot):
 
         if        message.startswith("/russian") or      message.startswith("!russian") or      message.startswith("Russian") or                              message.startswith("russian") or message.startswith("44"):
             await self.highrise.send_emote("dance-russian",user.id)
-            await self.highrise.chat(f" Você vai gostar desse emote {user.username} 😍")
 
         if        message.startswith("/pennywise") or      message.startswith("!pennywise") or      message.startswith("Pennywise") or                              message.startswith("pennywise") or message.startswith("45"):
             await self.highrise.send_emote("dance-pennywise",user.id)
-            await self.highrise.chat(f" Você vai gostar desse emote {user.username} 😍")
 
         if        message.startswith("/tik2") or      message.startswith("!tik2") or      message.startswith("Tik2") or   message.startswith("!dontstartnow") or   message.startswith("/dontstartnow") or   message.startswith("dontstartnow") or   message.startswith("Dontstartnow") or   message.startswith("tik2") or   message.startswith("46"):
             await self.highrise.send_emote("dance-tiktok2",user.id)
-            await self.highrise.chat(f" Você vai gostar desse emote {user.username} 😍")
 
         if        message.startswith("/blackpink") or      message.startswith("!blackpink") or      message.startswith("Blackpink") or                              message.startswith("blackpink") or message.startswith("47"):
             await self.highrise.send_emote("dance-blackpink",user.id)
-            await self.highrise.chat(f" Você vai gostar desse emote {user.username} 😍")
 
         if        message.startswith("/celebrate") or      message.startswith("!celebrate") or      message.startswith("Celebrate") or                              message.startswith("celebrate") or message.startswith("48"):
             await self.highrise.send_emote("emoji-celebrate",user.id)
-            await self.highrise.chat(f" Você vai gostar desse emote {user.username} 😍")
 
         if        message.startswith("/gagging") or      message.startswith("!gagging") or      message.startswith("Gagging") or                              message.startswith("gagging") or message.startswith("49"):
             await self.highrise.send_emote("emoji-gagging",user.id)
-            await self.highrise.chat(f" Você vai gostar desse emote {user.username} 😍")
 
         if        message.startswith("/flex") or      message.startswith("!flex") or      message.startswith("Flex") or   message.startswith("flex") or message.startswith("50"):
             await self.highrise.send_emote("emoji-flex",user.id)
-            await self.highrise.chat(f" Você vai gostar desse emote {user.username} 😍")
 
         if        message.startswith("/cursing") or      message.startswith("!cursing") or      message.startswith("Cursing") or                              message.startswith("cursing") or message.startswith("51"):
             await self.highrise.send_emote("emoji-cursing",user.id)
-            await self.highrise.chat(f" Você vai gostar desse emote {user.username} 😍")
 
         if        message.startswith("/thumbsup") or      message.startswith("!thumbsup") or      message.startswith("Thumbsup") or                              message.startswith("thumbsup") or message.startswith("52"):
             await self.highrise.send_emote("emoji-thumbsup",user.id)
-            await self.highrise.chat(f" Você vai gostar desse emote {user.username} 😍")
 
         if        message.startswith("/angry") or      message.startswith("!angry") or      message.startswith("Angry") or  message.startswith("angry") or message.startswith("53"):
             await self.highrise.send_emote("emoji-angry",user.id)
-            await self.highrise.chat(f" Você vai gostar desse emote {user.username} 😍")
 
         if        message.startswith("/punk") or      message.startswith("!punk") or      message.startswith("Punk") or   message.startswith("punk") or message.startswith("54"):
             await self.highrise.send_emote("emote-punkguitar",user.id)
-            await self.highrise.chat(f" Você vai gostar desse emote {user.username} 😍")
 
         if        message.startswith("/zombie") or      message.startswith("!zombie") or      message.startswith("Zombie") or message.startswith("zombie") or message.startswith("55"):
             await self.highrise.send_emote("emote-zombierun",user.id)
-            await self.highrise.chat(f" Você vai gostar desse emote {user.username} 😍")
 
         if        message.startswith("/sit") or      message.startswith("!sit") or      message.startswith("Sit") or    message.startswith("sit") or message.startswith("56"):
             await self.highrise.send_emote("idle-loop-sitfloor",user.id)
-            await self.highrise.chat(f" Você vai gostar desse emote {user.username} 😍")
 
         if        message.startswith("/fight") or      message.startswith("!fight") or      message.startswith("Fight") or  message.startswith("fight") or  message.startswith("!swordfight") or message.startswith("/swordfight") or message.startswith("Swordfight") or message.startswith("swordfight") or message.startswith("57"):
             await self.highrise.send_emote("emote-swordfight",user.id)
-            await self.highrise.chat(f" Você vai gostar desse emote {user.username} 😍")
 
         if        message.startswith("/ren") or      message.startswith("!ren") or      message.startswith("Ren") or    message.startswith("ren") or    message.startswith("!macarena") or     message.startswith("/macarena") or      message.startswith("Macarena") or message.startswith("macarena") or message.startswith("58"):
             await self.highrise.send_emote("dance-macarena",user.id)
-            await self.highrise.chat(f" Você vai gostar desse emote {user.username} 😍")
 
         if        message.startswith("/wei") or      message.startswith("!wei") or      message.startswith("Wei") or    message.startswith("wei") or message.startswith("!weird") or message.startswith("/weird") or message.startswith("Weird") or message.startswith("weird") or  message.startswith("59"):
             await self.highrise.send_emote("dance-weird",user.id)
-            await self.highrise.chat(f" Você vai gostar desse emote {user.username} 😍")
 
         if        message.startswith("/tik8") or      message.startswith("!tik8") or      message.startswith("Tik8") or           message.startswith("/savage") or           message.startswith("!savage") or           message.startswith("Savage") or message.startswith("tik8") or message.startswith("savage") or message.startswith("60"):
             await self.highrise.send_emote("dance-tiktok8",user.id)
-            await self.highrise.chat(f" Você vai gostar desse emote {user.username} 😍")
 
         if        message.startswith("/tik9") or      message.startswith("!tik9") or      message.startswith("Tik9") or           message.startswith("/viral") or           message.startswith("!viral") or           message.startswith("Viral") or  message.startswith("!viralgroove") or message.startswith("/viralgroove") or message.startswith("Viralgroove") or message.startswith("viralgroove") or message.startswith("tik9") or message.startswith("viral") or message.startswith("61"):
             await self.highrise.send_emote("dance-tiktok9",user.id)
-            await self.highrise.chat(f" Você vai gostar desse emote {user.username} 😍")
 
         if        message.startswith("/uwu") or      message.startswith("!uwu") or      message.startswith("Uwu") or    message.startswith("uwu") or message.startswith("62"):
             await self.highrise.send_emote("idle-uwu",user.id)
-            await self.highrise.chat(f" Você vai gostar desse emote {user.username} 😍")
 
         if        message.startswith("/tik4") or      message.startswith("!tik4") or      message.startswith("Tik4") or               message.startswith("/sayso") or               message.startswith("!sayso") or               message.startswith("Sayso") or  message.startswith("sayso") or message.startswith("tik4") or message.startswith("63"):
             await self.highrise.send_emote("idle-dance-tiktok4",user.id)
-            await self.highrise.chat(f" Você vai gostar desse emote {user.username} 😍")
 
         if        message.startswith("/star") or      message.startswith("!star") or      message.startswith("Star") or   message.startswith("star") or message.startswith("64"):
             await self.highrise.send_emote("emote-stargazer",user.id)
-            await self.highrise.chat(f" Você vai gostar desse emote {user.username} 😍")
 
         if        message.startswith("/pose9") or      message.startswith("!pose9") or      message.startswith("Pose9") or  message.startswith("pose9") or message.startswith("65"):
             await self.highrise.send_emote("emote-pose9",user.id)
-            await self.highrise.chat(f" Você vai gostar desse emote {user.username} 😍")
 
         if        message.startswith("/boxer") or      message.startswith("!boxer") or      message.startswith("Boxer") or  message.startswith("boxer") or message.startswith("66"):
             await self.highrise.send_emote("emote-boxer",user.id)
-            await self.highrise.chat(f" Você vai gostar desse emote {user.username} 😍")
 
         if        message.startswith("/guitar") or      message.startswith("!guitar") or      message.startswith("Guitar") or message.startswith("guitar") or message.startswith("67"):
             await self.highrise.send_emote("idle-guitar",user.id)
-            await self.highrise.chat(f" Você vai gostar desse emote {user.username} 😍")
 
         if        message.startswith("/penguin") or      message.startswith("!penguin") or      message.startswith("Penguin") or   message.startswith("penguin") or message.startswith("68"):
             await self.highrise.send_emote("dance-pinguin",user.id)
-            await self.highrise.chat(f" Você vai gostar desse emote {user.username} 😍")
 
         if        message.startswith("/astronaut") or      message.startswith("!astronaut") or      message.startswith("Astronaut") or                                message.startswith("astronaut") or message.startswith("69"):
             await self.highrise.send_emote("emote-astronaut",user.id)
-            await self.highrise.chat(f" Você vai gostar desse emote {user.username} 😍")
 
         if        message.startswith("/saunter") or      message.startswith("!saunter") or      message.startswith("Saunter") or               message.startswith("/anime") or               message.startswith("!anime") or               message.startswith("Anime") or    message.startswith("anime") or   message.startswith("saunter") or   message.startswith("70"):
             await self.highrise.send_emote("dance-anime",user.id)
-            await self.highrise.chat(f" Você vai gostar desse emote {user.username} 😍")
 
         if        message.startswith("/creepy") or      message.startswith("!creepy") or      message.startswith("Creepy") or   message.startswith("creepy") or message.startswith("71"):
             await self.highrise.send_emote("dance-creepypuppet",user.id)
-            await self.highrise.chat(f" Você vai gostar desse emote {user.username} 😍")
 
         if        message.startswith("/watch") or      message.startswith("!watch") or      message.startswith("Watch") or    message.startswith("watch") or message.startswith("72"):
             await self.highrise.send_emote("emote-creepycute",user.id)
-            await self.highrise.chat(f" Você vai gostar desse emote {user.username} 😍")
 
         if        message.startswith("/revelations") or      message.startswith("!revelations") or      message.startswith("Revelations") or                                message.startswith("revelations") or message.startswith("73"):
             await self.highrise.send_emote("emote-headblowup",user.id)
-            await self.highrise.chat(f" Você vai gostar desse emote {user.username} 😍")
 
         if        message.startswith("/bashful") or      message.startswith("!bashful") or      message.startswith("Bashful") or  message.startswith("bashful") or message.startswith("74"):
             await self.highrise.send_emote("emote-shy2",user.id)
-            await self.highrise.chat(f" Você vai gostar desse emote {user.username} 😍")
 
         if        message.startswith("/arabesque") or      message.startswith("!arabesque") or      message.startswith("Arabesque") or                                message.startswith("arabesque") or message.startswith("75"):
             await self.highrise.send_emote("emote-pose10",user.id)
-            await self.highrise.chat(f" Você vai gostar desse emote {user.username} 😍")
 
         if        message.startswith("/party") or      message.startswith("!party") or      message.startswith("Party") or    message.startswith("party") or message.startswith("76"):
             await self.highrise.send_emote("emote-celebrate",user.id)
-            await self.highrise.chat(f" Você vai gostar desse emote {user.username} 😍")
 
         if        message.startswith("/skating") or      message.startswith("!skating") or      message.startswith("Skating") or  message.startswith("skating") or message.startswith("77"):
             await self.highrise.send_emote("emote-iceskating",user.id)
-            await self.highrise.chat(f" Você vai gostar desse emote {user.username} 😍")
 
         if        message.startswith("/scritchy") or      message.startswith("!scritchy") or      message.startswith("Scritchy") or message.startswith("scritchy") or message.startswith("78"):
             await self.highrise.send_emote("idle-wild",user.id)
-            await self.highrise.chat(f" Você vai gostar desse emote {user.username} 😍")
 
         if        message.startswith("/bitnervous") or      message.startswith("!bitnervous") or      message.startswith("Bitnervous") or               message.startswith("!nervous") or               message.startswith("/nervous") or               message.startswith("Nervous") or  message.startswith("nervous") or   message.startswith("bitnervous") or message.startswith("79"):
             await self.highrise.send_emote("idle-nervous",user.id)
-            await self.highrise.chat(f" Você vai gostar desse emote {user.username} 😍")
 
         if        message.startswith("/timejump") or      message.startswith("!timejump") or      message.startswith("Timejump") or message.startswith("timejump") or message.startswith("time") or   message.startswith("Time") or   message.startswith("!time") or   message.startswith("/time") or message.startswith("80"):
             await self.highrise.send_emote("emote-timejump",user.id)
-            await self.highrise.chat(f" Você vai gostar desse emote {user.username} 😍")
 
         if        message.startswith("/gottago") or      message.startswith("!gottago") or      message.startswith("Gottago") or message.startswith("gottago") or  message.startswith("81"):
             await self.highrise.send_emote("idle-toilet",user.id)
-            await self.highrise.chat(f" Você vai gostar desse emote {user.username} 😍")
 
         if        message.startswith("/jingle") or      message.startswith("!jingle") or      message.startswith("Jingle") or  message.startswith("jingle") or message.startswith("82"):
             await self.highrise.send_emote("dance-jinglebell",user.id)
-            await self.highrise.chat(f" Você vai gostar desse emote {user.username} 😍")
 
         if        message.startswith("/hyped") or      message.startswith("!hyped") or      message.startswith("Hyped") or   message.startswith("hyped") or message.startswith("83"):
             await self.highrise.send_emote("emote-hyped",user.id)
-            await self.highrise.chat(f" Você vai gostar desse emote {user.username} 😍")
 
         if        message.startswith("/sleigh") or      message.startswith("!sleigh") or        message.startswith("sleigh") or      message.startswith("Sleigh") or message.startswith("84"):
             await self.highrise.send_emote("emote-sleigh",user.id)
-            await self.highrise.chat(f" Você vai gostar desse emote {user.username} 😍")
 
         if        message.startswith("/surprise") or      message.startswith("!surprise") or      message.startswith("surprise") or      message.startswith("Surprise") or message.startswith("85"):
             await self.highrise.send_emote("emote-pose6",user.id)
-            await self.highrise.chat(f" Você vai gostar desse emote {user.username} 😍")
           
         if        message.startswith("/repose") or      message.startswith("!repose") or        message.startswith("repose") or      message.startswith("Repose") or message.startswith("86"):
             await self.highrise.send_emote("sit-relaxed",user.id)
-            await self.highrise.chat(f" Você vai gostar desse emote {user.username} 😍")
 
         if        message.startswith("/kawaii") or      message.startswith("!kawaii") or        message.startswith("kawaii") or       message.startswith("Kawaii") or message.startswith("87"):
             await self.highrise.send_emote("dance-kawai",user.id)
