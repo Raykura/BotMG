@@ -197,7 +197,7 @@ class Bot(BaseBot):
            await self.highrise.send_whisper(user.id,f"@{user.username} 🛡 You Used The Shield 🛡")
             
         if        message.startswith("/tele") or              message.startswith("/tp") or              message.startswith("/fly") or     message.startswith("!tele") or      message.startswith("!tp") or     message.startswith("!fly"):
-          if user.username == "RayMG" or user.username == "FallonXOXO":            await self.teleporter(message)
+          if user.username == "iced_yu" or user.username == "FallonXOXO" or user.username == "RayMG":            await self.teleporter(message)
 
         if        message.startswith("/") or              message.startswith("-") or              message.startswith(".") or          message.startswith("!"):
             await self.command_handler(user, message)
@@ -1096,7 +1096,7 @@ class Bot(BaseBot):
           await                     self.teleport_to_user(user, target_username)
 
         if                            message.startswith("Summon") or         message.startswith("Summom") or         message.startswith("!summom") or        message.startswith("/summom") or        message.startswith("/summon") or  message.startswith("!summon"):
-          if user.username == "FallonXOXO" or user.username == "Its.Melly.Moo.XoXo" or user.username == "RayMG" or user.username == "iced_yu":
+          if user.username == "FallonXOXO" or user.username == "Its.Melly.Moo.XoXo" or user.username == "iced_yu" or user.username == "RayMG":
            target_username = message.split("@")[-1].strip()
            await self.teleport_user_next_to(target_username, user)
 
