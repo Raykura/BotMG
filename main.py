@@ -197,7 +197,7 @@ class Bot(BaseBot):
            await self.highrise.send_whisper(user.id,f"@{user.username} 🛡 You Used The Shield 🛡")
 
         if message.startswith("whiskey") or      message.startswith("whisky") or      message.startswith("Whiskey") or             message.startswith("drink") or             message.startswith("Drink") or message.startswith("!whiskey"):
-           await self.highrise.react("whiskey",user.id)
+           await self.highrise.react("heart",user.id)
            await self.highrise.send_whisper(user.id,f"@{user.username}  Whiskey: because adulting is hard and sometimes you need a little liquid encouragement! 🥃")
 
         if message.startswith("beer") or  message.startswith("Beer") or  message.startswith("alcohol") or message.startswith("Alcohol") or  message.startswith("!beer") or message.startswith("!Drunk"):
