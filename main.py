@@ -207,7 +207,15 @@ class Bot(BaseBot):
         if message.startswith("wine") or  message.startswith("redwine") or  message.startswith("red wine") or message.startswith("plonk") or  message.startswith("Plonk") or message.startswith("vino"):
            await self.highrise.react("heart",user.id)
            await self.highrise.send_whisper(user.id,f"@{user.username}  Ah, red wine—fancy!🍷 Trying to look sophisticated, or just hoping for purple teeth?🍷")
-                   
+        
+        if message.startswith("champagne") or  message.startswith("vodka") or  message.startswith("Vodka") or message.startswith("Champagne") or  message.startswith("celebration") or message.startswith("celebrate"):
+           await self.highrise.react("heart",user.id)
+           await self.highrise.send_whisper(user.id,f"@{user.username}  Ah, “Let’s raise a glass to celebrate the good times and the friends who make them unforgettable.”🍸🎉")
+      
+       if message.startswith("cocktail") or  message.startswith("mixed") or  message.startswith("mojito") or message.startswith("Potion") or  message.startswith("tonic") or message.startswith("julep"):
+           await self.highrise.react("heart",user.id)
+           await self.highrise.send_whisper(user.id,f"@{user.username}  “Cheers to the moments that turn into memories, one drink at a time.🥂")
+                                          
          
         if message.startswith("Water") or message.startswith("water") or message.startswith("thirsty") or message.startswith("Thirsty") or  message.startswith("dry") or message.startswith("Dry"):
            await self.highrise.react("heart",user.id)
