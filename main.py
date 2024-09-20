@@ -158,7 +158,7 @@ if message.lower().startswith("-tipme ") and user.username== "RayMG":
 
        
 
-if message.startswith("/fish"):
+        if message.startswith("/fish"):
             await self.highrise.send_whisper(user.id,"fish 🎣...")
           
         if message.lower() == "/fish":
