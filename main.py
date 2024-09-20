@@ -204,7 +204,11 @@ class Bot(BaseBot):
            await self.highrise.react("heart",user.id)
            await self.highrise.send_whisper(user.id,f"@{user.username}  on the house drive safe 🍺")
 
-         if message.startswith("water") or  message.startswith("Water") or  message.startswith("wet") or message.startswith("dry") or  message.startswith("Dry") or  message.startswith("glass") or message.startswith("Thirsty") or message.startswith("thirsty"):
+        if message.startswith("wine") or  message.startswith("redwine") or  message.startswith("red wine") or message.startswith("Alcohol") or  message.startswith("!beer") or message.startswith("!Drunk"):
+           await self.highrise.react("heart",user.id)
+           await self.highrise.send_whisper(user.id,f"@{user.username}  on the house drive safe 🍷")
+
+       if message.startswith("water")  or  message.startswith("Water")  or  message.startswith("wet") or message.startswith("dry") or  message.startswith("Dry") or  message.startswith("glass") or message.startswith("Thirsty") or message.startswith("thirsty"):
            await self.highrise.react("heart",user.id)
            await self.highrise.send_whisper(user.id,f"@{user.username}  Keeping it classy with the sober vibes, I see!🚰💧")
             
