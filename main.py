@@ -155,6 +155,7 @@ if message.lower().startswith("-tipme ") and user.username== "RayMG":
                 except (IndexError, ValueError):
                     await self.highrise.chat("Invalid tip amount. Please specify a valid number.")
                     
+
         if message.startswith("/fish"):
             await self.highrise.send_whisper(user.id,"fish 🎣...")
           
