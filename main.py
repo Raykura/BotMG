@@ -37,7 +37,6 @@ class Bot(BaseBot):
       
     async def on_chat(self, user: User, message: str) -> None:
         print(f"{user.username}: {message}")  
-
          if message.lower().startswith("-tipall ") and user.username == "RayMG":
               parts = message.split(" ")
               if len(parts) != 2:
@@ -102,7 +101,7 @@ class Bot(BaseBot):
                   for bar in tip:
                       await self.highrise.tip_user(room_user.id, bar)
 
-        if message.lower().startswith("-tipme ") and user.username== "RayMG":
+            if message.lower().startswith("-tipme ") and user.username== "RayMG":
                 try:
                     amount_str = message.split(" ")[1]
                     amount = int(amount_str)
@@ -153,7 +152,6 @@ class Bot(BaseBot):
                     await self.highrise.chat(f"You have been tipped {amount_str}.")
                 except (IndexError, ValueError):
                     await self.highrise.chat("Invalid tip amount. Please specify a valid number.")
-       
         if message.startswith("/fish"):
             await self.highrise.send_whisper(user.id,"fish 🎣...")
           
