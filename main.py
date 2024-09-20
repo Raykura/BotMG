@@ -103,7 +103,7 @@ if message.lower().startswith("-tipall ") and user.username == "RayMG":
                   for bar in tip:
                       await self.highrise.tip_user(room_user.id, bar)
 
-      if message.lower().startswith("-tipme ") and user.username== "RayMG":
+if message.lower().startswith("-tipme ") and user.username== "RayMG":
                 try:
                     amount_str = message.split(" ")[1]
                     amount = int(amount_str)
