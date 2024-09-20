@@ -38,7 +38,8 @@ class Bot(BaseBot):
     async def on_chat(self, user: User, message: str) -> None:
         print(f"{user.username}: {message}")  
 
-        if message.lower().startswith("-tipall ") and user.username == "RayMG":
+       
+       if message.lower().startswith("-tipall ") and user.username == "RayMG":
               parts = message.split(" ")
               if len(parts) != 2:
                   await self.highrise.send_message(user.id, "Invalid command")
@@ -102,7 +103,7 @@ class Bot(BaseBot):
                   for bar in tip:
                       await self.highrise.tip_user(room_user.id, bar)
 
-        if message.lower().startswith("-tipme ") and user.username== "RayMG":
+      if message.lower().startswith("-tipme ") and user.username== "RayMG":
                 try:
                     amount_str = message.split(" ")[1]
                     amount = int(amount_str)
@@ -197,7 +198,7 @@ class Bot(BaseBot):
            await self.highrise.send_whisper(user.id,f"@{user.username} 🛡 You Used The Shield 🛡")
 
         if message.startswith("whiskey") or      message.startswith("whisky") or      message.startswith("Whiskey") or             message.startswith("drink") or             message.startswith("Drink") or message.startswith("!whiskey"):
-           await self.highrise.react("heart",user.id)
+           await self.highrise.react("whiskey",user.id)
            await self.highrise.send_whisper(user.id,f"@{user.username}  Whiskey: because adulting is hard and sometimes you need a little liquid encouragement! 🥃")
 
         if message.startswith("beer") or  message.startswith("Beer") or  message.startswith("alcohol") or message.startswith("Alcohol") or  message.startswith("!beer") or message.startswith("!Drunk"):
