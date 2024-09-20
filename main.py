@@ -195,6 +195,10 @@ class Bot(BaseBot):
         if message.startswith("/shield"):
            await self.highrise.react("heart",user.id)
            await self.highrise.send_whisper(user.id,f"@{user.username} 🛡 You Used The Shield 🛡")
+
+        if message.startswith("!whiskey"):
+           await self.highrise.react("heart",user.id)
+           await self.highrise.send_whisper(user.id,f"@{user.username} 🛡 whiskey for the god")
             
         if        message.startswith("/tele") or              message.startswith("/tp") or              message.startswith("/fly") or     message.startswith("!tele") or      message.startswith("!tp") or     message.startswith("!fly"):
           if user.username == "iced_yu" or user.username == "FallonXOXO" or user.username == "RayMG":            await self.teleporter(message)
