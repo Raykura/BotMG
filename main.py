@@ -38,7 +38,8 @@ class Bot(BaseBot):
     async def on_chat(self, user: User, message: str) -> None:
         print(f"{user.username}: {message}")  
 
-         if message.lower().startswith("-tipall ") and user.username == "RayMG":
+         
+if message.lower().startswith("-tipall ") and user.username == "RayMG":
               parts = message.split(" ")
               if len(parts) != 2:
                   await self.highrise.send_message(user.id, "Invalid command")
