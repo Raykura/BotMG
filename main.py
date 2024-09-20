@@ -154,6 +154,7 @@ class Bot(BaseBot):
                     await self.highrise.chat(f"You have been tipped {amount_str}.")
                 except (IndexError, ValueError):
                     await self.highrise.chat("Invalid tip amount. Please specify a valid number.")
+       
         if message.startswith("/fish"):
             await self.highrise.send_whisper(user.id,"fish 🎣...")
           
