@@ -199,6 +199,10 @@ class Bot(BaseBot):
         if message.startswith("whiskey") or      message.startswith("whisky") or      message.startswith("Whiskey") or             message.startswith("drink") or             message.startswith("Drink") or message.startswith("!whiskey"):
            await self.highrise.react("heart",user.id)
            await self.highrise.send_whisper(user.id,f"@{user.username}  whiskey for a god 🥃")
+
+         if message.startswith("beer") or      message.startswith("Beer") or      message.startswith("alcohol") or             message.startswith("Alcohol") or             message.startswith("!beer") or message.startswith("!Drunk"):
+           await self.highrise.react("heart",user.id)
+           await self.highrise.send_whisper(user.id,f"@{user.username}  on the house drive safe 🍺")
             
         if        message.startswith("/tele") or              message.startswith("/tp") or              message.startswith("/fly") or     message.startswith("!tele") or      message.startswith("!tp") or     message.startswith("!fly"):
           if user.username == "iced_yu" or user.username == "FallonXOXO" or user.username == "RayMG":            await self.teleporter(message)
