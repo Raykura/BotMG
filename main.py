@@ -212,7 +212,8 @@ class Bot(BaseBot):
            await self.highrise.react("heart",user.id)
            await self.highrise.send_whisper(user.id,f"@{user.username}  Ah, “Let’s raise a glass to celebrate the good times and the friends who make them unforgettable.”🍸🎉")
       
-       if message.startswith("cocktail") or  message.startswith("mixed") or  message.startswith("mojito") or message.startswith("Potion") or  message.startswith("tonic") or message.startswith("julep"):
+       
+        if message.startswith("cocktail") or  message.startswith("mixed") or  message.startswith("mojito") or message.startswith("Potion") or  message.startswith("tonic") or message.startswith("julep"):
            await self.highrise.react("heart",user.id)
            await self.highrise.send_whisper(user.id,f"@{user.username}  “Cheers to the moments that turn into memories, one drink at a time.🥂")
                                           
