@@ -209,7 +209,7 @@ class Bot(BaseBot):
            await self.highrise.send_whisper(user.id,f"@{user.username}  Ah, red wine—fancy!🍷 Trying to look sophisticated, or just hoping for purple teeth?🍷")
                    
          
-        if message.startswith("Water") or  message.startswith("thirsty") or message.startswith("Thirsty") or  message.startswith("dry") or message.startswith("Dry"):
+        if message.startswith("Water") or message.startswith("water") or message.startswith("thirsty") or message.startswith("Thirsty") or  message.startswith("dry") or message.startswith("Dry"):
            await self.highrise.react("heart",user.id)
            await self.highrise.send_whisper(user.id,f"@{user.username}  You could say, “Ah, water—because staying hydrated is the real adventure!”🚰💧")
                       
