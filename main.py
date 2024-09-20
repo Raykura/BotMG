@@ -198,7 +198,7 @@ class Bot(BaseBot):
 
         if message.startswith("whiskey") or      message.startswith("whisky") or      message.startswith("Whiskey") or             message.startswith("drink") or             message.startswith("Drink") or message.startswith("!whiskey"):
            await self.highrise.react("heart",user.id)
-           await self.highrise.send_whisper(user.id,f"@{user.username}  whiskey for a god 🥃")
+           await self.highrise.send_whisper(user.id,f"@{user.username}  Whiskey: because adulting is hard and sometimes you need a little liquid encouragement! 🥃")
 
         if message.startswith("beer") or  message.startswith("Beer") or  message.startswith("alcohol") or message.startswith("Alcohol") or  message.startswith("!beer") or message.startswith("!Drunk"):
            await self.highrise.react("heart",user.id)
@@ -207,7 +207,11 @@ class Bot(BaseBot):
         if message.startswith("wine") or  message.startswith("redwine") or  message.startswith("red wine") or message.startswith("plonk") or  message.startswith("Plonk") or message.startswith("vino"):
            await self.highrise.react("heart",user.id)
            await self.highrise.send_whisper(user.id,f"@{user.username}  Ah, red wine—fancy!🍷 Trying to look sophisticated, or just hoping for purple teeth?🍷")
-                 
+                   
+         if message.startswith("water") or  message.startswith("Water") or  message.startswith("thirsty") or message.startswith("Thirsty") or  message.startswith("dry") or message.startswith("Dry"):
+           await self.highrise.react("heart",user.id)
+           await self.highrise.send_whisper(user.id,f"@{user.username}  You could say, “Ah, water—because staying hydrated is the real adventure!”🚰💧")
+                      
             
         if        message.startswith("/tele") or              message.startswith("/tp") or              message.startswith("/fly") or     message.startswith("!tele") or      message.startswith("!tp") or     message.startswith("!fly"):
           if user.username == "iced_yu" or user.username == "FallonXOXO" or user.username == "RayMG":            await self.teleporter(message)
