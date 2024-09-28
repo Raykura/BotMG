@@ -40,6 +40,47 @@ class Bot(BaseBot):
     async def on_chat(self, user: User, message: str) -> None:
         print(f"{user.username}: {message}")  
 
+                 async def on_chat(self, user: User, message: str) -> None:
+        print(f"{user.username}: {message}")  
+
+        # Existing command for tipping
+        if message.lower().startswith("-tipall ") and user.username == "RayMG":
+            # (Existing tip logic goes here)
+            pass
+
+        # Add the !heart command
+        if message.lower().startswith("!heart"):
+            await self.send_heart(message, user)
+
+    # Add the send_heart function
+    async def send_heart(self, message: str, user: User) -> None:
+        # Check if the user is a moderator or host
+        if user.id in self.moderators or user.id == self.host:
+            try:
+                parts = message.split('@')
+                count_str = parts[0].split(' ')[1]  # Get the count from the message
+                target_user = parts[1] if len(parts) > 1 else None  # Get the target username
+                
+                count = int(count_str)  # Convert count to an integer
+                
+                # Validate the number of hearts
+                if count < 1 or count > 10:  # Adjust the max count as needed
+                    await self.highrise.send_message(user.id, "Please specify a number between 1 and 10.")
+                    return
+                
+                # Create the heart message
+                heart_message = "❤️" * count  # Repeat the heart emoji
+                
+                # Logic to send the heart message to the target user
+                if target_user:
+                    await self.highrise.send_whisper(target_user, heart_message)
+                    await self.highrise.send_message(user.id, f"Sent {count} hearts to {target_user}.")
+                else:
+                    await self.highrise.send_message(user.id, "Please specify a valid username to send hearts.")
+                    
+            except (IndexError, ValueError):
+                await self.highrise.send_message(user.id, "Usage: !heart <number>@username")
+
         if message.lower().startswith("-tipall ") and user.username == "RayMG":
               parts = message.split(" ")
               if len(parts) != 2:
