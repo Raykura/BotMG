@@ -20,8 +20,8 @@ class WebServer:
         t.start()
 
 class RunBot:
-    room_id = "66d2726b2e80dd1f614c4dbb"  # Your room ID
-    bot_token = "202d7b11c3d00fe44e472d4c1b8ad9f4e3277e5fd03927d5cfab15532e9d8af8"  # Your bot token
+    room_id = "66bad059afeca0c24b497205"  # Your room ID
+    bot_token = "60cd05e713ba823116a9e70f7fbb9418bdbca45e2c057b1fb8bf57c4c265d5f1"  # Your bot token
     bot_file = "main"
     bot_class = "Bot"
 
