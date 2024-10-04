@@ -25,18 +25,18 @@ class Bot(BaseBot):
         await self.highrise.walk_to(Position(3.0 , 0.25 , 1.5, "FrontRight"))
              
 async def on_user_join(self, user: User, position: Position | AnchorPosition) -> None:
-    # Print a message to the console when a user joins
-    print(f"{user.username} entrou na sala")  
+    # Only the bot prints the message in the console
+    print(f"{user.username} (ID: {user.id})")
 
-    # Announce the user has joined the room publicly with their user ID
-    await self.highrise.chat(f"{user.username} (ID: {user.id}) has joined the room!")
+    # Announce the user has joined the room publicly
+    await self.highrise.chat(f"{user.username} joined to find a buddy!")
 
     # Send welcome whispers to the user
     await self.highrise.send_whisper(user.id, f"❤️Welcome [{user.username}] Use: [!emote list] or [1-97] For Dances & Emotes")
-    await self.highrise.send_whisper(user.id, f"❤️Use: [/help] For More Informations.")
+    await self.highrise.send_whisper(user.id, f"❤️Use: [/help] For More Information.")
     await self.highrise.send_whisper(user.id, f"❤type -4 .to go up 🤍.")
 
-    # Send emotes to the user
+    # Send emotes
     await self.highrise.send_emote("dance-hipshake")
     await self.highrise.send_emote("emote-lust", user.id)
 
