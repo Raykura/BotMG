@@ -44,7 +44,7 @@ class Bot(BaseBot):
         await self.highrise.react("heart", user.id)
              
     async def on_chat(self, user: User, message: str) -> None:
-    try:
+        try:
         allowed_users = [
             "FallonXOXO", "Its.Melly.Moo.XoXo", "iced_yu", 
             "sh1n1gam1699", "hidinurbasement", "@emping", 
@@ -71,7 +71,7 @@ class Bot(BaseBot):
                     await self.highrise.send_whisper(user.id, "Please enter a message after the command.")
             else:
                 await self.highrise.send_whisper(user.id, "You are not authorized to use this command.")
-    except Exception as e:
+       except Exception as e:
         print(f"Error in on_chat: {e}") 
         await self.highrise.send_whisper(user.id, "An error occurred while sending your message.")
 
