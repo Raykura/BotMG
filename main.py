@@ -74,7 +74,6 @@ class Bot(BaseBot):
         except Exception as e:
            print(f"Error in on_chat: {e}") 
            await self.highrise.send_whisper(user.id, "An error occurred while sending your message.")
-                 
         print(f"{user.username}: {message}")  
         if message.lower().startswith("!tipall ") and user.username == "RayMG":
               parts = message.split(" ")
