@@ -24,17 +24,23 @@ class Bot(BaseBot):
         print("working")
         await self.highrise.walk_to(Position(3.0 , 0.25 , 1.5, "FrontRight"))
              
-    async def on_user_join(self, user: User, position: Position | AnchorPosition) -> None:
-        print(f"{user.username} entrou na sala")   
-        await self.highrise.send_whisper(user.id,f"❤️Welcome [{user.username}] Use: [!emote list] or [1-97] For Dances & Emotes")
+async def on_user_join(self, user: User, position: Position | AnchorPosition) -> None:
+    print(f"{user.username} entrou na sala")   
 
-        await self.highrise.send_whisper(user.id,f"❤️Use: [/help] For More Informations.")
+    # Announce the user has joined the room publicly
+    await self.highrise.chat(f"{user.username} has joined the room!")
 
-        await self.highrise.send_whisper(user.id,f"❤type -4 .to go up 🤍.")
-           
-        await self.highrise.send_emote("dance-hipshake")
-      
-        await self.highrise.send_emote("emote-lust",user.id) 
+    # Send welcome whispers to the user
+    await self.highrise.send_whisper(user.id, f"❤️Welcome [{user.username}] Use: [!emote list] or [1-97] For Dances & Emotes")
+    await self.highrise.send_whisper(user.id, f"❤️Use: [/help] For More Informations.")
+    await self.highrise.send_whisper(user.id, f"❤type -4 .to go up 🤍.")
+
+    # Send emotes
+    await self.highrise.send_emote("dance-hipshake")
+    await self.highrise.send_emote("emote-lust", user.id)
+
+    # React with a heart emoji
+    await self.highrise.react("heart", user.id)
       
         
     async def on_chat(self, user: User, message: str) -> None:
