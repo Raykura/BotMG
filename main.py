@@ -43,8 +43,8 @@ class Bot(BaseBot):
        # React with a heart emoji
         await self.highrise.react("heart", user.id)
              
-    async def on_chat(self, user: User, message: str) -> None:
-     try:
+   async def on_chat(self, user: User, message: str) -> None:
+    try:
         allowed_users = [
             "FallonXOXO", "Its.Melly.Moo.XoXo", "iced_yu", 
             "sh1n1gam1699", "hidinurbasement", "@emping", 
@@ -71,11 +71,11 @@ class Bot(BaseBot):
                     await self.highrise.send_whisper(user.id, "Please enter a message after the command.")
             else:
                 await self.highrise.send_whisper(user.id, "You are not authorized to use this command.")
-       except Exception as e:
-            print(f"Error in on_chat: {e}") 
-            await self.highrise.send_whisper(user.id, "An error occurred while sending your message.")  
+    except Exception as e:
+        print(f"Error in on_chat: {e}") 
+        await self.highrise.send_whisper(user.id, "An error occurred while sending your message.")
 
-        if message.lower().startswith("-tipall ") and user.username == "RayMG":
+        if message.lower().startswith("!tipall ") and user.username == "RayMG":
               parts = message.split(" ")
               if len(parts) != 2:
                   await self.highrise.send_message(user.id, "Invalid command")
@@ -83,7 +83,7 @@ class Bot(BaseBot):
               # Checks if the amount is valid
               try:
                   amount = int(parts[1])
-              except:
+               except:
                   await self.highrise.chat("Invalid amount")
                   return
               # Checks if the bot has the amount
@@ -139,7 +139,7 @@ class Bot(BaseBot):
                   for bar in tip:
                       await self.highrise.tip_user(room_user.id, bar)
 
-        if message.lower().startswith("-tipme ") and user.username== "RayMG":
+        if message.lower().startswith("!tipme ") and user.username== "RayMG":
                 try:
                     amount_str = message.split(" ")[1]
                     amount = int(amount_str)
