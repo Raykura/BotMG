@@ -24,23 +24,29 @@ class Bot(BaseBot):
         print("working")
         await self.highrise.walk_to(Position(3.0 , 0.25 , 1.5, "FrontRight"))
              
-    async def on_user_join(self, user: User, position: Position | AnchorPosition) -> None:
-        print(f"{user.username} entrou na sala")   
-        await self.highrise.send_whisper(user.id,f"❤️Welcome [{user.username}] Use: [!emote list] or [1-97] For Dances & Emotes")
+async def on_user_join(self, user: User, position: Position | AnchorPosition) -> None:
+    print(f"{user.username} entrou na sala")   
 
-        await self.highrise.send_whisper(user.id,f"❤️Use: [/help] For More Informations.")
+    # Announce the user has joined the room publicly
+    await self.highrise.chat(f"{user.username} has joined the room!")
 
-        await self.highrise.send_whisper(user.id,f"❤type -4 .to go up 🤍.")
-           
-        await self.highrise.send_emote("dance-hipshake")
-      
-        await self.highrise.send_emote("emote-lust",user.id) 
+    # Send welcome whispers to the user
+    await self.highrise.send_whisper(user.id, f"❤️Welcome [{user.username}] Use: [!emote list] or [1-97] For Dances & Emotes")
+    await self.highrise.send_whisper(user.id, f"❤️Use: [/help] For More Informations.")
+    await self.highrise.send_whisper(user.id, f"❤type -4 .to go up 🤍.")
+
+    # Send emotes
+    await self.highrise.send_emote("dance-hipshake")
+    await self.highrise.send_emote("emote-lust", user.id)
+
+    # React with a heart emoji
+    await self.highrise.react("heart", user.id) 
       
         
     async def on_chat(self, user: User, message: str) -> None:
         print(f"{user.username}: {message}")  
 
-        if message.lower().startswith("-tipall ") and user.username == "RayMG":
+        if message.lower().startswith("!tipall ") and user.username == "RayMG":
               parts = message.split(" ")
               if len(parts) != 2:
                   await self.highrise.send_message(user.id, "Invalid command")
@@ -104,7 +110,7 @@ class Bot(BaseBot):
                   for bar in tip:
                       await self.highrise.tip_user(room_user.id, bar)
 
-        if message.lower().startswith("-tipme ") and user.username== "RayMG":
+        if message.lower().startswith("!tipme ") and user.username== "RayMG":
                 try:
                     amount_str = message.split(" ")[1]
                     amount = int(amount_str)
@@ -1281,8 +1287,8 @@ class Bot(BaseBot):
            target_username = message.split("@")[-1].strip()
            await self.teleport_user_next_to(target_username, user)
             
-        if              message.startswith("Carteira") or  message.startswith("Wallet") or    message.startswith("wallet") or       message.startswith("carteira"):
-          if user.username == "FallonXOXO" or user.username == "RayMG":
+        if              message.startswith("!Wallet") or  message.startswith("Wallet") or    message.startswith("wallet") or       message.startswith("!wallet"):
+          if user.username == "FallonXOXO" or user.username == "sh1n1gam1699" or user.username == "RayMG":
             wallet = (await self.highrise.get_wallet()).content
             await self.highrise.send_whisper(user.id,f"AMOUNT : {wallet[0].amount} {wallet[0].type}")
             await self.highrise.send_emote("emote-blowkisses")
