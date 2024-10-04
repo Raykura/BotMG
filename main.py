@@ -43,28 +43,37 @@ class Bot(BaseBot):
        # React with a heart emoji
         await self.highrise.react("heart", user.id)
              
-   async def on_chat(self, user: User, message: str) -> None:
-       try:
-           _bid = "66be9396fdcc1589bbf8f297"  # Bot user ID
-           _rid = "66d2726b2e80dd1f614c4dbb"  # Room ID
-
-           # Check if the message is whispered and if it starts with the command
-           if message.lower().startswith("!s"):
-               # Extract the user's message after the command
-               user_message = message[len("!s "):].strip()  # Get the actual message
-            
-               # Ensure the command is sent via whisper to the bot
-               if user_message:
-                   # Broadcast the user's message to the room
-                   await self.highrise.chat(user_message)  # Send the user's message to the room
+    async def on_chat(self, user: User, message: str) -> None:
+     try:
+        allowed_users = [
+            "FallonXOXO", "Its.Melly.Moo.XoXo", "iced_yu", 
+            "sh1n1gam1699", "hidinurbasement", "@emping", 
+            "BabygirlFae", "RayMG"
+        ]
+        
+        # Check if the message starts with the command (case-insensitive)
+        if message.lower().startswith("!say") or message.lower().startswith("!s"):
+            # Ensure that the user is in the allowed users list
+            if user.username in allowed_users:
+                # Extract the user's message after the command
+                if message.lower().startswith("!say "):
+                    user_message = message[len("!say "):].strip()  # Get the actual message
+                else:
+                    user_message = message[len("!s "):].strip()  # Get the actual message for !s
                 
-                   # Optionally, confirm receipt of the command by whispering back to the user
-                   await self.highrise.send_whisper(user.id, "Your message has been sent to the room.")
-               else:
-                   await self.highrise.send_whisper(user.id, "Please enter a message after the command.")
-       except Exception as e:
-           print(f"Error in on_chat: {e}") 
-           await self.highrise.send_whisper(user.id, "An error occurred while sending your message.")  
+                if user_message:
+                    # Broadcast the user's message to the room
+                    await self.highrise.chat(user_message)  # Send the user's message to the room
+                    
+                    # Optionally, confirm receipt of the command by whispering back to the user
+                    await self.highrise.send_whisper(user.id, "Your message has been sent to the room.")
+                else:
+                    await self.highrise.send_whisper(user.id, "Please enter a message after the command.")
+            else:
+                await self.highrise.send_whisper(user.id, "You are not authorized to use this command.")
+    except Exception as e:
+        print(f"Error in on_chat: {e}") 
+        await self.highrise.send_whisper(user.id, "An error occurred while sending your message.")  
 
         if message.lower().startswith("-tipall ") and user.username == "RayMG":
               parts = message.split(" ")
