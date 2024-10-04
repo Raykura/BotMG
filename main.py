@@ -43,7 +43,7 @@ class Bot(BaseBot):
        # React with a heart emoji
         await self.highrise.react("heart", user.id)
              
-   async def on_chat(self, user: User, message: str) -> None:
+    async def on_chat(self, user: User, message: str) -> None:
     try:
         allowed_users = [
             "FallonXOXO", "Its.Melly.Moo.XoXo", "iced_yu", 
