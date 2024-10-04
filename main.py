@@ -71,9 +71,9 @@ class Bot(BaseBot):
                     await self.highrise.send_whisper(user.id, "Please enter a message after the command.")
             else:
                 await self.highrise.send_whisper(user.id, "You are not authorized to use this command.")
-    except Exception as e:
-        print(f"Error in on_chat: {e}") 
-        await self.highrise.send_whisper(user.id, "An error occurred while sending your message.")  
+       except Exception as e:
+            print(f"Error in on_chat: {e}") 
+            await self.highrise.send_whisper(user.id, "An error occurred while sending your message.")  
 
         if message.lower().startswith("-tipall ") and user.username == "RayMG":
               parts = message.split(" ")
